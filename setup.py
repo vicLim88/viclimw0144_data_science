@@ -16,7 +16,7 @@ LONG_DESCRIPTION = ''' A package that provides a convenient way to manage and
 
 # Setting up
 setup(
-    name="vidstream",
+    name="vic_data_science",
     version=VERSION,
     author="vicLim88 (Vic Lim)",
     author_email="<vic.lim@icloud.com>",
