@@ -8,7 +8,7 @@ here = os.path.abspath(os.path.dirname(__file__))
 with codecs.open(os.path.join(here, "README.md"), encoding="utf-8") as fh:
     long_description = "\n" + fh.read()
 
-VERSION = '0.0.5'
+VERSION = '0.0.6'
 DESCRIPTION = 'Manages data by converting them to dataframes'
 LONG_DESCRIPTION = ''' A package that provides a convenient way to manage and 
     manipulate different types of data sources and convert them to Pandas 
@@ -24,7 +24,7 @@ setup(
     description=DESCRIPTION,
     long_description_content_type="text/markdown",
     long_description=long_description,
-    packages=find_packages(where="src/file_manager/public"),
+    packages=find_packages(where="src"),
     package_dir={'': 'src'},
     install_requires=[
     ],
