@@ -3,7 +3,7 @@ import sqlite3
 import sys
 import traceback
 
-from src.file_manager.public.file_manager_base import file_manager_base
+from ..public.file_manager_base import file_manager_base
 
 
 class FileManagerSQLite(file_manager_base):
