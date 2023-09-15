@@ -6,7 +6,7 @@ import sqlite3
 import sys
 import traceback
 
-import src.database_manager.databasemanager as db_man
+from ..database_manager.databasemanager import DatabaseManager
 from ..public.file_manager_base import file_manager_base
 
 
@@ -36,7 +36,7 @@ class FileManagerSQLite(file_manager_base):
 
     def convert_to_file(self, data: pd, **kwargs) -> None:
         table_name: str = kwargs.get("table_name", "")
-        db_manager = db_man.DatabaseManager(
+        db_manager = DatabaseManager(
             file_path_db=self.db_file
         )
         db_manager.connect()
