@@ -34,3 +34,20 @@ class file_manager_base(ABC):
             df = file_manager.convert_to_dataframe()
         """
         pass
+
+    @abstractmethod
+    def convert_to_file(self, **kwargs) -> None:
+        """
+        Convert Pandas DataFrame to Data Source
+
+        This method converts the specified Pandas DataFrame to a data source.
+
+        Args: **kwargs: Additional keyword arguments for customizing the
+        conversion process. The available keyword arguments depend on the
+        data source type.
+
+        Example:
+            file_manager = FileManager('csv', 'data.csv')
+            df = file_manager.convert_to_dataframe()
+        """
+        pass
