@@ -2,7 +2,7 @@ import sqlite3
 
 
 class DatabaseManager:
-    def __init__(self, file_path_db: str, file_path_sql: str):
+    def __init__(self, file_path_db: str, file_path_sql: str=None):
         self.cursor = None
         self.connection = None
         self.file_path_db: str = file_path_db

@@ -34,7 +34,17 @@ class FileManagerSQLite(file_manager_base):
         finally:
             conn.close()
 
-    def convert_to_file(self, **kwargs):
+    def convert_to_file(self, data: pd, **kwargs) -> None:
+        table_name: str = kwargs.get("table_name", "")
+        db_manager = DatabaseManager(
+            file_path_db=self.db_file
+        )
+        db_manager.connect()
+        data.to_sql('my_table', db_manager.connection, if_exists='replace',
+                    index=False)
+        db_manager.disconnect()
+
+    def convert_to_file_old(self, **kwargs):
         pandas_dataframe = kwargs.get("pandas_dataframe", None)
         sql_script_to_execute: str = kwargs.get("sql_script_to_execute", [])
         sql_file_name_path: str = kwargs.get("sql_file_name_path", "")
