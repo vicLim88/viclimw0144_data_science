@@ -34,45 +34,14 @@ class FileManagerSQLite(file_manager_base):
         finally:
             conn.close()
 
-    def convert_to_file(self, data: pd, **kwargs) -> None:
-        table_name: str = kwargs.get("table_name", "")
+    def convert_to_file(self, data: pd, table_name: str) -> None:
         db_manager = DatabaseManager(
             file_path_db=self.db_file
         )
         db_manager.connect()
-        data.to_sql('my_table', db_manager.connection, if_exists='replace',
+        data.to_sql(table_name, db_manager.connection, if_exists='replace',
                     index=False)
         db_manager.disconnect()
-
-    # def convert_to_file_old(self, **kwargs):
-    #     pandas_dataframe = kwargs.get("pandas_dataframe", None)
-    #     sql_script_to_execute: str = kwargs.get("sql_script_to_execute", [])
-    #     sql_file_name_path: str = kwargs.get("sql_file_name_path", "")
-    #     schema_attributes = kwargs.get("schema_attributes", "")
-    #     table_name: str = kwargs.get("table_name", "")
-    #     column_names: str = kwargs.get("column_names", "")
-    #     records: str = kwargs.get("records", "")
-    #
-    #     db_manager = DatabaseManager(
-    #         file_path_db=self.db_file,
-    #         file_path_sql=sql_file_name_path
-    #     )
-    #     db_manager.connect()
-    #
-    #     if 'create_schema' in sql_script_to_execute:
-    #         db_manager.execute_sql_script(
-    #             script_name="create_schema.sql",
-    #             schema_attributes=schema_attributes,
-    #             table_name=table_name)
-    #
-    #     if 'insert_into_table' in sql_script_to_execute:
-    #         db_manager.execute_sql_script(
-    #             script_name="insert_into_table.sql",
-    #             table_name=table_name,
-    #             column_names=column_names,
-    #             records=records)
-    #
-    #     db_manager.disconnect()
 
         # ToDo : Create Exception if db file is not provided
         # ToDo : Create Exception if sql file is not provided
