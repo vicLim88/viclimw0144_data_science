@@ -3,7 +3,7 @@ import sqlite3
 import sys
 import traceback
 
-from src.database_manager import DatabaseManager
+from vic_lim_wx.database_manager import DatabaseManager
 from ..public.filemanagerbase import FileManagerBase
 
 

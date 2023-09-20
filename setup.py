@@ -23,8 +23,8 @@ setup(
     description=DESCRIPTION,
     long_description_content_type="text/markdown",
     long_description=long_description,
-    packages=find_packages(where="src"),
-    package_dir={'': 'src'},
+    packages=find_packages(where="vic_lim_wx"),
+    package_dir={'': 'vic_lim_wx'},
     install_requires=[
     ],
     keywords=[
