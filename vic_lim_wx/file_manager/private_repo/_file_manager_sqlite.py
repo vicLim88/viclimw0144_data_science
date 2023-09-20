@@ -4,7 +4,7 @@ import sys
 import traceback
 
 from vic_lim_wx.database_manager import DatabaseManager
-from ..public.filemanagerbase import FileManagerBase
+from ..public.file_manager_base import FileManagerBase
 
 
 class FileManagerSQLite(FileManagerBase):
