@@ -8,7 +8,7 @@ Pandas DataFrames.
 from abc import ABC, abstractmethod
 
 
-class file_manager_base(ABC):
+class FileManagerBase(ABC):
     """
     FileManager Class
 

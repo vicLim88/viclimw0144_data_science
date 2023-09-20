@@ -3,11 +3,11 @@ import sqlite3
 import sys
 import traceback
 
-from ..database_manager.databasemanager import DatabaseManager
-from ..public.file_manager_base import file_manager_base
+from src.database_manager import DatabaseManager
+from ..public.filemanagerbase import FileManagerBase
 
 
-class FileManagerSQLite(file_manager_base):
+class FileManagerSQLite(FileManagerBase):
 
     def __init__(self, db_file: str):
         self.db_file = db_file

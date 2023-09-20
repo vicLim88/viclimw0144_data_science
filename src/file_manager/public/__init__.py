@@ -1,2 +1,2 @@
-from .file_manager_base import file_manager_base
+from .filemanagerbase import FileManagerBase
 from .file_manager_factory import FileManagerFactory
