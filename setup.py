@@ -7,7 +7,7 @@ here = os.path.abspath(os.path.dirname(__file__))
 with codecs.open(os.path.join(here, "README.md"), encoding="utf-8") as fh:
     long_description = "\n" + fh.read()
 
-VERSION = '0.2.8'
+VERSION = '0.2.9'
 DESCRIPTION = 'Manages data by converting them to dataframes'
 LONG_DESCRIPTION = ''' A package that provides a convenient way to manage and 
     manipulate different types of data sources and convert them to Pandas 
@@ -25,8 +25,8 @@ setup(
     long_description=long_description,
     packages=find_packages(where="vic_lim_wx"),
     package_dir={'': 'vic_lim_wx'},
-    py_modules=['vic_lim_wx'],
     install_requires=[
+        'pandas>=2.0.0'
     ],
     keywords=[
         'python',
