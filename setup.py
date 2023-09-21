@@ -23,7 +23,7 @@ setup(
     description=DESCRIPTION,
     long_description_content_type="text/markdown",
     long_description=long_description,
-    packages=find_packages(where="vic_lim_wx"),
+    packages=find_packages(),
     install_requires=[],
     keywords=[
         'python',
