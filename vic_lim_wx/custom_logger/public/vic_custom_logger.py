@@ -8,11 +8,10 @@ from .logger_custom import CustomLogger
 
 
 class Vic_Custom_Logger:
-    def __init__(self, class_name: str = "",
-                 config_file: str = "configuration/config_logger.ini"):
+    def __init__(self, config_file: str, class_name: str = ""):
         # Step 1 : Define where your configuration file is
         self.root_dir: str = self._get_root_dir()
-        self.ini_config_logger_path: str = f"{self.root_dir}/{config_file}"
+        self.ini_config_logger_path: str = config_file
 
         # Step 2 : Create a Logger Config instance
         self.logger_test: LoggerConfig = LoggerConfigFactory(
@@ -29,4 +28,3 @@ class Vic_Custom_Logger:
 
     def get_logger(self):
         return self.logger
-
