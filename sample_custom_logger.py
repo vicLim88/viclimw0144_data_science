@@ -4,6 +4,7 @@ import vic_lim_wx
 class test:
     def __init__(self, msg: str):
         self.logger = vic_lim_wx.Vic_Custom_Logger(
+            config_file="C:/GIT/Vic_Lim_WX/configuration/config_logger.ini",
             class_name=test.__name__).get_logger()
         self.msg: str = msg
 
