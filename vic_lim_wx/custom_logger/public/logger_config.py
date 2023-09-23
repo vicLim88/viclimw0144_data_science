@@ -20,7 +20,7 @@ class LoggerConfig:
         configuration file.
     """
 
-    def __init__(self, config_parser: configparser):
+    def __init__(self, config_parser: configparser.ConfigParser):
         """
         Initializes a LoggerConfig instance. Will perform a check on file path
         , and then will proceed to read the specified configuration file if
