@@ -15,6 +15,7 @@ class FileManagerBase(ABC):
     The FileManager class is responsible for managing different data source and 
     converting them into Pandas DataFrames.
     """
+
     @abstractmethod
     def convert_to_dataframe(self, **kwargs):
         """

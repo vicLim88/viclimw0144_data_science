@@ -1,3 +1,1 @@
-from .public.logger_config_factory import LoggerConfigFactory
-from .public.logger_custom import CustomLogger
-from .public.logger_config import LoggerConfig
+from .public.vic_custom_logger import Vic_Custom_Logger

@@ -1,29 +1,23 @@
-import os
-import logging
 import vic_lim_wx
 
 
+class test:
+    def __init__(self, msg: str):
+        self.logger = vic_lim_wx.Vic_Custom_Logger(
+            class_name=test.__name__).get_logger()
+        self.msg: str = msg
+
+    def get_message(self):
+        self.logger.debug(f"Testing {self.msg}, this is log DEBUG")
+        self.logger.info(f"Testing {self.msg}, this is log INFO")
+        self.logger.warning(f"Testing {self.msg}, this is log WARNING")
+        self.logger.error(f"Testing {self.msg}, this is log ERROR")
+        self.logger.critical(f"Testing {self.msg}, this is log CRITICAL")
+
+
 def main():
-
-    # Step 1 : Define where your configuration file is
-    ini_config_logger_path: str = \
-        f"{os.getcwd()}/configuration/config_logger.ini"
-
-    # Step 2 : Create a Logger Config instance
-    logger_test: vic_lim_wx.LoggerConfig = vic_lim_wx.LoggerConfigFactory(
-        config_file_path=ini_config_logger_path
-    ).create_logger_config()
-
-    # Step 3 : Pass the logger config to CustomLogger
-    logger: logging.Logger = vic_lim_wx.CustomLogger(
-        logger_config=logger_test,
-        class_name="test").get_logger()
-
-    # Step 4 : Start using !!!
-    logger.debug(msg="Test Debug")
-    logger.info(msg="Test Info is working")
-    logger.warning(msg="Test Warning is working")
-    logger.error(msg="Test Error is working")
+    test_class = test(msg="Hellowwww")
+    test_class.get_message()
 
 
 if __name__ == "__main__":

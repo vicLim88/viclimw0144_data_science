@@ -19,7 +19,7 @@ class CustomLogger:
     """
 
     def __init__(self, logger_config: LoggerConfig,
-                 class_name: str):
+                 class_name: str = "Not_A_Class"):
         """
         Responsibility:
             - Create a customLogger instance.
