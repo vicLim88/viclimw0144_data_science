@@ -5,9 +5,10 @@ from pathlib import Path
 from .logger_config import LoggerConfig
 from .logger_config_factory import LoggerConfigFactory
 from .logger_custom import CustomLogger
+from ..private_repo.singleton_logger import Singleton
 
 
-class Vic_Custom_Logger:
+class Vic_Custom_Logger(metaclass=Singleton):
     def __init__(self, config_file: str, class_name: str = ""):
         # Step 1 : Define where your configuration file is
         self.root_dir: str = self._get_root_dir()
