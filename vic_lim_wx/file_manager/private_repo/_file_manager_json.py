@@ -1,6 +1,6 @@
 import pandas as pd
 
-from vic_lim_wx import FileManagerBase
+from ..public import FileManagerBase
 
 
 class FileManagerJSON(FileManagerBase):
