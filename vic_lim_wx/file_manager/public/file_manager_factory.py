@@ -8,9 +8,9 @@ class FileManagerFactory:
         if ".db" in data_file_path:
             return FileManagerSQLite(data_file_path)
         elif ".csv" in data_file_path:
-            return FileManagerCSV
+            return FileManagerCSV(data_file_path)
         elif ".json" in data_file_path:
-            return FileManagerJSON
+            return FileManagerJSON(data_file_path)
 
         raise ValueError(
             f"{data_file_path} with extension {data_file_path.split('.')[1]}")
